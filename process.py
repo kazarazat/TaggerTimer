@@ -33,6 +33,7 @@ def func3():
 	end = time.time()
 	print '\nStanford Tagging: finishing\ntags:%s' % t,'\ntime:',(end - start)
 
+# spacy multiproc issues
 def func4():
 	start = time.time()
 	print 'SpaCy NLP: starting'
@@ -48,11 +49,11 @@ if __name__ == '__main__':
 	p2.start()
 	p3 = Process(target=func3)
 	p3.start()
-	p4 = Process(target=func4)
-	p4.start()
+	#p4 = Process(target=func4)
+	#p4.start()
 	
 	p1.join()
 	p2.join()
 	p3.join()
-	p4.join()
+	#p4.join()
 

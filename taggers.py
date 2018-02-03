@@ -1,12 +1,13 @@
 from os.path import expanduser
 
 # SENNA NLP
-"""
+
 home = expanduser("~/senna/")
 from nltk.tag.senna import SennaTagger
 from nltk.tag.senna import SennaNERTagger
 senTag = SennaTagger(home)
 senNer = SennaNERTagger(home)
+
 
 # Stanford NLP
 from nltk.tag import StanfordPOSTagger
@@ -16,16 +17,14 @@ base = expanduser("~/stanford-ner/")
 _path_to_model = home_ + 'models/english-bidirectional-distsim.tagger'
 _path_to_jar = home_ + 'stanford-postagger-3.5.2.jar'
 stanPOS = StanfordPOSTagger(_path_to_model,path_to_jar=_path_to_jar) 
-"""
+
 # NLTK
 from nltk import pos_tag, word_tokenize
 
 #Spacy
 import spacy
 import unicodedata
-from spacy import displacy
 nlp = spacy.load('en')
-
 
 
 def spacy_tag(text):
@@ -46,7 +45,4 @@ def senna_tag(text):
 
 
 
-nlp = spacy.load('en')
-doc = nlp(u'The quick brown fox jumped over the lazy dog.')
-displacy.serve(doc, style='dep')
 
